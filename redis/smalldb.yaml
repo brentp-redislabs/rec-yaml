@@ -4,6 +4,7 @@ metadata:
   name: testdb
   namespace: "{{path[2]}}"
 spec:
+  databaseSecretName: test-secret
   memorySize: 100MB
   shardCount: 2
   replication: true
