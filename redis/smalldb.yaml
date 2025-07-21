@@ -1,0 +1,10 @@
+apiVersion: app.redislabs.com/v1alpha1
+kind: RedisEnterpriseDatabase
+metadata:
+  name: testdb
+spec:
+  memorySize: 100MB
+  shardCount: 2
+  replication: true
+  rackAware: true
+  tlsMode: enabled

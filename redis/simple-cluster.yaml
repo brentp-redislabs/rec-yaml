@@ -1,0 +1,20 @@
+apiVersion: "app.redislabs.com/v1"
+kind: "RedisEnterpriseCluster"
+metadata:
+  name: "rec"
+  namespace: "{{path[2]}}"
+spec:
+  nodes: 3
+  uiServiceType: ClusterIP
+  username: testuser@email.com
+  redisEnterpriseNodeResources:
+    limits:
+      cpu: "2"
+      memory: "4Gi"
+    requests:
+      cpu: "2"
+      memory: "4Gi"
+  persistentSpec:
+      enabled: true
+      volumeSize: "20Gi"
+      storageClassName: "gp3"
