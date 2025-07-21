@@ -2,6 +2,7 @@ apiVersion: app.redislabs.com/v1alpha1
 kind: RedisEnterpriseDatabase
 metadata:
   name: testdb
+  namespace: "{{path[2]}}"
 spec:
   memorySize: 100MB
   shardCount: 2
