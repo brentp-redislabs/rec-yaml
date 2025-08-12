@@ -2,7 +2,7 @@ apiVersion: "app.redislabs.com/v1"
 kind: "RedisEnterpriseCluster"
 metadata:
   name: "rec"
-  namespace: "{{path[2]}}"
+  namespace: "{{path]}}"
 spec:
   nodes: 3
   uiServiceType: ClusterIP
