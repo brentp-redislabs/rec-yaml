@@ -3,7 +3,7 @@ kind: "RedisEnterpriseCluster"
 metadata:
   name: "rec"
 spec:
-  nodes: 3
+  nodes: 1
   uiServiceType: ClusterIP
   username: testuser@email.com
   redisEnterpriseNodeResources:
@@ -14,6 +14,4 @@ spec:
       cpu: "2"
       memory: "4Gi"
   persistentSpec:
-      enabled: true
-      volumeSize: "8Gi"
-      storageClassName: "gp3"
+      enabled: false

@@ -5,7 +5,6 @@ metadata:
 spec:
   databaseSecretName: test-secret
   memorySize: 100MB
-  shardCount: 2
-  replication: true
-  rackAware: true
+  shardCount: 1
+  replication: false
   tlsMode: enabled
