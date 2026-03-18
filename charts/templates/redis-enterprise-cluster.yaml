@@ -1,0 +1,24 @@
+apiVersion: "app.redislabs.com/v1"
+kind: "RedisEnterpriseCluster"
+metadata:
+  name: {{ .Values.redisEnterpriseCluster.name }}
+spec:
+  nodes: {{ .Values.redisEnterpriseCluster.nodes }}
+  username: {{ .Values.redisEnterpriseCluster.username }}
+  licenseSecretName: {{ .Values.redisEnterpriseCluster.licenseSecretName }}
+  clusterCredentialSecretName: {{ .Values.redisEnterpriseCluster.clusterCredentialSecretName }}
+  redisEnterpriseNodeResources:
+    limits:
+      cpu: {{ .Values.redisEnterpriseCluster.resources.limits.cpu | quote }}
+      memory: {{ .Values.redisEnterpriseCluster.resources.limits.memory | quote }}
+    requests:
+      cpu: {{ .Values.redisEnterpriseCluster.resources.requests.cpu | quote }}
+      memory: {{ .Values.redisEnterpriseCluster.resources.requests.memory | quote }}
+  persistentSpec:
+      enabled: {{ .Values.redisEnterpriseCluster.persistence.enabled }}
+  redisEnterpriseAdditionalPodSpecAttributes:
+    enableServiceLinks: false
+  servicesRiggerSpec:
+    servicesRiggerAdditionalPodSpecAttributes:
+      enableServiceLinks: false
+  
